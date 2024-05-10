@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+$cinza: #707070;
+$vermelho: #F25652;
+$border-radius-default: .7rem;
+$font-size-default: 1.3rem;
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+#app {
+    background-color: #e9e9e9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // padding: 1rem;
+
+    .component_layout {
+        width: 100%;
+        max-width: 600px;
+        margin-inline: auto;
+        background-color: #FFF;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        border-radius: .5rem;
+        padding: 2rem 3rem;
+
+        button {
+            padding: 0;
+            margin-top: 5rem;
+            width: 100%;
+            
+            a {
+                text-decoration: none;
+                color: #FFF;
+                padding: .75rem 3rem;
+                display: block;
+            }            
+        }
+
+        &#component_home {     
+            h3 {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+                
+                span {
+                    font-weight: 600;
+                }
+            }
+        }   
+    
+        &#component_termo {  
+            max-width: 800px;
+            
+            div {
+                &:nth-of-type(1) {
+                    background-color: #FFF;
+                    position: sticky;
+                    top: 0;
+                    margin-bottom: 3rem;
+                    padding: 1rem;
+        
+                    img {
+                        margin-inline: auto;
+                        display: block;
+                        max-width: 15rem;
+                    }
+                }
+            }
+    
+            h4 {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                gap: .25rem;
+                
+                span {
+                    font-weight: 600;
+                }
+            }
+        }   
+    
+        &.component_questionário {
+            h2 {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+
+            h5 {
+                b {
+                    font-weight: 700;
+                }
+            }
+
+            h6 {
+                margin-top: 1rem;
+
+                b {
+                    font-weight: 600;
+                }
+            }
+
+            p {
+                font-size: .75rem;
+                font-weight: 500;
+                // line-height: .3;
+            }
+
+            label {
+                font-weight: 500;
+            }
+        }
+
+        &#component_agradecimento {
+            color: #006400;
+            text-align: center;
+
+            h2 {
+                margin-bottom: 2rem;
+            }
+
+            p {
+                margin-bottom: 0;
+                font-weight: 500;
+            }
+        }        
+    }
+
+    #component_login {
+        position: relative;
+
+        .bg_login {
+            position: absolute;
+            inset: 0;
+            background-image: url('../assets/bg/tela_login.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: top left;
+            z-index: 0;
+        }
+    
+        .overlay_login {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, #7a7a7a, #313131);
+            opacity: .7;
+            z-index: 0;
+        }
+    
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+    
+            .bg_card {
+                position: absolute;
+                background-color: #F3F3F3;
+                top: 0;
+                right: 0;
+                left: 0;
+                width: calc(13rem + 4vw);
+                z-index: -1;
+                height: 80vh;
+                margin-inline: auto;
+        
+                img {
+                    max-width: 75%;
+                    display: block;
+                    position: absolute;
+                    top: calc(15px + 10vh);
+                    right: 0;
+                    left: 0;
+                    margin-inline: auto;
+                }
+            }
+        
+            .card_login {
+                width: 100%;
+                max-width: 600px;
+                margin-inline: auto;
+                border-radius: $border-radius-default;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                background-color: #F3F3F3;
+                padding: 2rem 1.5rem;
+                position: relative;
+        
+                @media (min-width: 600px) {
+                    padding: 3rem 2.5rem;
+                }
+        
+                h2 {
+                    text-align: center;
+                    color: $cinza;
+                    font-weight: 600;
+                }
+        
+                .form-group {
+                    position: relative;
+                    margin-top: 1rem;
+        
+                    svg {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 1rem;
+                        z-index: 1;
+                        color: $cinza;
+                        font-size: $font-size-default;
+                    }       
+        
+                    input[type="text"],
+                    input[type="password"] {
+                        border: 1px solid $cinza;            
+                        border-radius: $border-radius-default;
+                        padding: .7rem 1.2rem .7rem 3rem;
+                        color: $cinza;
+                        font-size: $font-size-default;
+                        font-weight: 500;
+            
+                        &:focus {
+                            box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+                            border-color: #00000038;
+                        }
+            
+                        &::placeholder {
+                            opacity: .8;
+                        }
+                    }   
+
+                    button {
+                        padding: 0;
+                        margin-top: 3rem;
+                        width: 100%;
+                        
+                        a {
+                            text-decoration: none;
+                            color: #FFF;
+                            padding: .75rem 3rem;
+                            display: block;
+                        }            
+                    }
+                }
+        
+            }
+        
+            #footer {    
+                p {
+                    color: #FFF;
+                    text-align: center;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
