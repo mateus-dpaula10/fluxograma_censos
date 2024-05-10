@@ -9,6 +9,12 @@ export default () => {
                 <p>
                     Agradecemos a sua participação! Juntos/as, podemos conquistar a equidade, com inclusão e respeito às diferenças.
                 </p>
+
+                <button class="btn btn-success">
+                    <a href="/#home">
+                        Retornar ao início
+                    </a>
+                </button>
             </div>
         </div>
     `

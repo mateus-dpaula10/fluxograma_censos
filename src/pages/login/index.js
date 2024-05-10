@@ -8,10 +8,10 @@ export default () => {
             
             <div class="container">
                 <div class="bg_card">
-                    <!-- <img src="./assets/logos/logo_divcorp.png" alt="Logo DivCorp"> -->
+                    <img src="./assets/logos/logo_divcorp.png" alt="Logo DivCorp">  
                 </div>
                 <div class="card_login">
-                    <h2>LOGAR</h2>
+                    <h2>LOGIN</h2>
 
                     <div class="form-group">
                         <i class="fa-solid fa-user"></i>

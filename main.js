@@ -54,7 +54,7 @@ window.addEventListener('hashchange', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const hashchangeEvent = new Event('hashchange')
-    window.dispatchEvent(hashchangeEvent)   
+    window.dispatchEvent(hashchangeEvent)
 })
 
 const btnTermoDisabled = () => {
@@ -71,18 +71,26 @@ const btnTermoDisabled = () => {
 }
 
 const btnLoginDisabled = () => {
-    const btnTermo = document.querySelector('#btn_comecar_login ')    
+    const btnTermo = document.querySelector('#btn_comecar_login')        
     btnTermo.setAttribute('disabled', 'disabled')
 
-    // continuar validacao formulario
+    document.querySelector('#login_email').addEventListener('input', () => {
+        if (document.querySelector('#login_email').value.length == 0 
+            || document.querySelector('#login_senha').value.length == 0) {
+            btnTermo.setAttribute('disabled', 'disabled')
+        } else {
+            btnTermo.removeAttribute('disabled')
+        }
+    })     
 
-    // document.querySelector('#aceita_termo').addEventListener('change', () => {
-    //     if (document.querySelector('#aceita_termo').checked) {
-    //         btnTermo.removeAttribute('disabled')
-    //     } else {
-    //         btnTermo.setAttribute('disabled', 'disabled')
-    //     }
-    // })
+    document.querySelector('#login_senha').addEventListener('input', () => {
+        if (document.querySelector('#login_email').value.length == 0 
+            || document.querySelector('#login_senha').value.length == 0) {
+            btnTermo.setAttribute('disabled', 'disabled')
+        } else {
+            btnTermo.removeAttribute('disabled')
+        }
+    })     
 }
 
 const inputsQuestDisabled = () => {
